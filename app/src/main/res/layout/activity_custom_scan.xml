@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="zhanghegang.com.bawei.date0928jingdong.CustomScanActivity">
+<com.journeyapps.barcodescanner.DecoratedBarcodeView
+    android:id="@+id/dbv"
+
+
+    app:zxing_preview_scaling_strategy="fitXY"
+    app:zxing_use_texture_view="true"
+    android:layout_above="@+id/ll_controll"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"></com.journeyapps.barcodescanner.DecoratedBarcodeView>
+<LinearLayout
+    android:orientation="horizontal"
+    android:id="@+id/ll_controll"
+    android:layout_alignParentBottom="true"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <Button
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="闪光灯"
+        android:id="@+id/btn_switch"
+        android:layout_alignParentBottom="true"
+       />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="hint_1"
+        android:id="@+id/btn_hint1"
+        android:layout_alignTop="@+id/btn_switch"
+        android:layout_centerHorizontal="true" />
+
+    <Button
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="hint_2"
+        android:id="@+id/btn_hint2"
+        android:layout_alignTop="@+id/btn_hint1"
+        />
+
+</LinearLayout>
+</RelativeLayout>
