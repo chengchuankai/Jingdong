@@ -145,50 +145,5 @@ private LinearLayout ll_sao;
         }
     }
 
-//    @Override
-//    public void onClick(View view) {
-//        switch (view.getId()) {
-//            case R.id.iv_head:
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fl_all, new Fragment_head()).commit();
-//                ivHead.setImageResource(R.drawable.ac1);
-//                ivKind.setImageResource(R.drawable.abw);
-//                ivFind.setImageResource(R.drawable.aby);
-//                ivShopping.setImageResource(R.drawable.abu);
-//                ivMy.setImageResource(R.drawable.ac2);
-//                break;
-//            case R.id.iv_kind:
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fl_all, new Fragment_kind()).commit();
-//                ivHead.setImageResource(R.drawable.ac0);
-//                ivKind.setImageResource(R.drawable.abx);
-//                ivFind.setImageResource(R.drawable.aby);
-//                ivShopping.setImageResource(R.drawable.abu);
-//                ivMy.setImageResource(R.drawable.ac2);
-//
-//                break;
-//            case R.id.iv_find:
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fl_all, new Fragment_find()).commit();
-//                ivHead.setImageResource(R.drawable.ac0);
-//                ivKind.setImageResource(R.drawable.abw);
-//                ivFind.setImageResource(R.drawable.abz);
-//                ivShopping.setImageResource(R.drawable.abu);
-//                ivMy.setImageResource(R.drawable.ac2);
-//                break;
-//            case R.id.iv_shopping:
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fl_all, new Fragment_shopping()).commit();
-//                ivHead.setImageResource(R.drawable.ac0);
-//                ivKind.setImageResource(R.drawable.abw);
-//                ivFind.setImageResource(R.drawable.aby);
-//                ivShopping.setImageResource(R.drawable.abv);
-//                ivMy.setImageResource(R.drawable.ac2);
-//                break;
-//            case R.id.iv_my:
-//                getSupportFragmentManager().beginTransaction().replace(R.id.fl_all, new Fragment_my()).commit();
-//                ivHead.setImageResource(R.drawable.ac0);
-//                ivKind.setImageResource(R.drawable.abw);
-//                ivFind.setImageResource(R.drawable.aby);
-//                ivShopping.setImageResource(R.drawable.abu);
-//                ivMy.setImageResource(R.drawable.ac3);
-//                break;
-//        }
-//    }
+
 }

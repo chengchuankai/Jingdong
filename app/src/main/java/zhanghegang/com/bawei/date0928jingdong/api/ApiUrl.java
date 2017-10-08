@@ -7,4 +7,5 @@ package zhanghegang.com.bawei.date0928jingdong.api;
 public class ApiUrl {
     public static final String BANNERURL="http://120.27.23.105/ad/getAd";
     public static final String KINDURL="http://120.27.23.105/product/getCatagory";
+    public static final String ChildKindUrl="http://120.27.23.105/product/getProductCatagory";
 }

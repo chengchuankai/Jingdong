@@ -4,6 +4,17 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+    <android.support.v4.widget.NestedScrollView
+
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        android:id="@+id/nest"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
 <RelativeLayout
     android:id="@+id/toolBar"
     android:layout_width="match_parent"
@@ -21,7 +32,39 @@
 </RelativeLayout>
     <ImageView
         android:layout_width="match_parent"
+        android:layout_height="100dp"
+        android:scaleType="centerCrop"
+        android:id="@+id/iv_head_banner"
+        android:src="@drawable/timg"
+        />
+    <ScrollView
+android:scrollbarAlwaysDrawHorizontalTrack="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        >
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:orientation="horizontal"
+    >
+
+    <android.support.v7.widget.RecyclerView
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rcv_kind"
+        ></android.support.v7.widget.RecyclerView>
+</LinearLayout>
+
+
+
+    </ScrollView>
+    <ImageView
+        android:layout_width="match_parent"
         android:layout_height="1000dp"
         android:src="@mipmap/ic_launcher_round"
         />
+        </LinearLayout>
+    </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

@@ -6,21 +6,19 @@
     android:layout_height="match_parent"
     tools:context="zhanghegang.com.bawei.date0928jingdong.MainActivity">
 
-    <android.support.v4.widget.NestedScrollView
 
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        android:id="@+id/nest"
-        android:layout_above="@+id/ll_bottom"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-        <FrameLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:id="@+id/fl_all"
-            android:layout_above="@+id/ll_bottom"
-            ></FrameLayout>
 
-    </android.support.v4.widget.NestedScrollView>
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:id="@+id/fl_all"
+                android:layout_above="@+id/ll_bottom"
+                ></FrameLayout>
+
+
+
+
+
     <android.support.v7.widget.Toolbar
         android:layout_height="?android:actionBarSize"
         android:layout_width="match_parent"

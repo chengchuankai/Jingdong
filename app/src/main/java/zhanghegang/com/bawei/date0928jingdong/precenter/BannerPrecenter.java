@@ -18,6 +18,10 @@ public class BannerPrecenter implements BannerModel.BannerListener {
     }
     public void gainBanner(){
         bannerModel.gainImg();
+
+    }
+    public void gainKind(){
+        bannerModel.gainKind();
     }
 
     @Override
@@ -28,5 +32,16 @@ public class BannerPrecenter implements BannerModel.BannerListener {
     @Override
     public void gainFail() {
 bannerView.gainFail();
+    }
+
+    @Override
+    public void kindSuc(String data) {
+        bannerView.kindSuc(data);
+
+    }
+
+    @Override
+    public void kindFail() {
+bannerView.kindFail();
     }
 }

@@ -1,12 +1,10 @@
 package zhanghegang.com.bawei.date0928jingdong.view;
 
 /**
- * Created by asus on 2017/9/29.
+ * Created by asus on 2017/10/8.
  */
 
-public interface BannerView {
+public interface ChildKindView {
     void gainSuc(String data);
     void gainFail();
-    void kindSuc(String data);
-    void kindFail();
 }

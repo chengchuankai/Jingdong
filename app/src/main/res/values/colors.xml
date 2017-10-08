@@ -7,4 +7,7 @@
     <color name="search_bg">#fff</color>
     <color name="search_tv">#fff</color>
     <color name="search_hint">#ccc</color>
+    <color name="kind_name_bg">#ccc</color>
+    <color name="kind_name_bg_normal">#fff</color>
+    <color name="tv_kind_name_item">#000</color>
 </resources>
