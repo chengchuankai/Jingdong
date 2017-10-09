@@ -4,67 +4,82 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
+
     <android.support.v4.widget.NestedScrollView
 
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
         android:id="@+id/nest"
-
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+
+        android:layout_height="match_parent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior">
+
         <LinearLayout
-            android:orientation="vertical"
             android:layout_width="match_parent"
-            android:layout_height="match_parent">
-<RelativeLayout
-    android:id="@+id/toolBar"
-    android:layout_width="match_parent"
- android:layout_height="150dp">
-    <com.stx.xhb.xbanner.XBanner
+            android:layout_height="match_parent"
+            android:orientation="vertical">
 
-        android:layout_width="match_parent"
-        android:layout_height="150dp"
-        android:scaleType="centerCrop"
-        android:id="@+id/iv_banner"
-        app:pointNormal="@drawable/shape_normal"
-        app:pointSelect="@drawable/shape_select"
-        app:pointsPosition="CENTER"
-        />
-</RelativeLayout>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="100dp"
-        android:scaleType="centerCrop"
-        android:id="@+id/iv_head_banner"
-        android:src="@drawable/timg"
-        />
-    <ScrollView
-android:scrollbarAlwaysDrawHorizontalTrack="true"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+            <RelativeLayout
+                android:id="@+id/toolBar"
+                android:layout_width="match_parent"
+                android:layout_height="150dp">
 
-        >
-<LinearLayout
+                <com.stx.xhb.xbanner.XBanner
+
+                    android:id="@+id/iv_banner"
+                    android:layout_width="match_parent"
+                    android:layout_height="150dp"
+                    android:scaleType="centerCrop"
+                    app:pointNormal="@drawable/shape_normal"
+                    app:pointSelect="@drawable/shape_select"
+                    app:pointsPosition="CENTER" />
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/iv_head_banner"
+                android:layout_width="match_parent"
+                android:layout_height="100dp"
+                android:scaleType="centerCrop"
+                android:src="@drawable/timg" />
+
+            <RelativeLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical">
+
+                <android.support.v4.view.ViewPager
+                    android:id="@+id/vp_head_kind"
+
+                    android:layout_width="match_parent"
+                    android:layout_height="120dp">
+
+                </android.support.v4.view.ViewPager>
+
+                <LinearLayout
+                    android:id="@+id/ll_dot"
+                    android:layout_width="match_parent"
+                    android:layout_height="10dp"
+                    android:layout_alignParentBottom="true"
+                    android:gravity="center"
+                    android:orientation="horizontal"></LinearLayout>
+            </RelativeLayout>
+<TextView
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:orientation="horizontal"
-    >
+    android:gravity="center"
+    android:id="@+id/tv_tuijian"
+    android:padding="5dp"
+    android:textColor="@color/tuijian_tvbg"
+    android:text="为 你 推 荐"
+    />
+            <android.support.v7.widget.RecyclerView
+                android:id="@+id/rcv_show"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
 
-    <android.support.v7.widget.RecyclerView
-
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:id="@+id/rcv_kind"
-        ></android.support.v7.widget.RecyclerView>
-</LinearLayout>
-
-
-
-    </ScrollView>
-    <ImageView
-        android:layout_width="match_parent"
-        android:layout_height="1000dp"
-        android:src="@mipmap/ic_launcher_round"
-        />
+            <ImageView
+                android:layout_width="match_parent"
+                android:layout_height="1000dp"
+                android:src="@mipmap/ic_launcher_round" />
         </LinearLayout>
     </android.support.v4.widget.NestedScrollView>
 </LinearLayout>

@@ -34,10 +34,11 @@ public class Fragment_kind extends Fragment implements BannerView {
     private View view;
 @BindView(R.id.kind_name)
     ListView lv_kind_name;
-    @BindView(R.id.vp_kind_child)
-    ViewPager vp_kind_chid;
+
     private BannerPrecenter bannerPrecenter;
     private Kind_main kind_main;
+
+    private ParamsCid paramsCid;
 
     @Nullable
     @Override
@@ -51,14 +52,17 @@ public class Fragment_kind extends Fragment implements BannerView {
     @Override
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
+        Fragment1_shop shop=new Fragment1_shop();
+        Bundle bundle=new Bundle();
+        bundle.putString("cid",1+"");
+        shop.setArguments(bundle);
+        getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_child_kind,shop).commit();
         initData();
-        initVp();
+
+
     }
 
-    private void initVp() {
-        Vp_kind_Adapter vp_kind_adapter=new Vp_kind_Adapter(getActivity().getSupportFragmentManager());
-        vp_kind_chid.setAdapter(vp_kind_adapter);
-    }
+
 
     private void initData() {
         bannerPrecenter = new BannerPrecenter(this);
@@ -85,6 +89,12 @@ parseData(data);
 });
     }
 
+    @Override
+    public void onResume() {
+        super.onResume();
+
+    }
+
     private void parseData(String data) {
         Gson gson=new Gson();
         KindBean kindBean = gson.fromJson(data, KindBean.class);
@@ -105,11 +115,26 @@ parseData(data);
         lv_kind_name.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
-
+               Fragment1_shop shop=new Fragment1_shop();
               kind_main.changePosition(i);
+                int cid = kind.get(i).getCid();
+
+//                paramsCid.gainCid(cid+"");
+                Bundle bundle=new Bundle();
+                bundle.putString("cid",cid+"");
+                shop.setArguments(bundle);
+                getActivity().getSupportFragmentManager().beginTransaction().replace(R.id.fl_child_kind,shop).commit();
 
             }
         });
+    }
+
+    public void setParagms(ParamsCid paramsCid) {
+        this.paramsCid=paramsCid;
+    }
+
+    public interface ParamsCid{
+        void gainCid(String cid);
     }
 
     @Override

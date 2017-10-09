@@ -8,10 +8,10 @@
     android:scaleType="centerCrop"
     android:src="@drawable/timg"
     />
+
    <ListView
-       android:scrollbars="none"
+       android:id="@+id/lv_grid_childview"
        android:layout_width="match_parent"
        android:layout_height="match_parent"
-       android:id="@+id/lv_grid_childview"
-       ></ListView>
+       android:scrollbars="none"></ListView>
 </LinearLayout>

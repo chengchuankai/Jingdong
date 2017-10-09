@@ -12,23 +12,22 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import zhanghegang.com.bawei.date0928jingdong.R;
+import zhanghegang.com.bawei.date0928jingdong.bean.BannerBean;
 import zhanghegang.com.bawei.date0928jingdong.bean.KindBean;
 
 /**
  * Created by asus on 2017/9/29.
  */
 
-public class KindAdapter extends RecyclerView.Adapter<KindAdapter.MyViewHolder> {
+public class TuijianAdapter extends RecyclerView.Adapter<TuijianAdapter.MyViewHolder> {
     private final Context context;
-    private final List<KindBean.DataBean> list;
+    private final List<BannerBean.TuijianBean.ListBean> list;
 
-    private int mIndex;//页数下标，表示第几页，从0开始
-    private int mPagerSize;
-    public KindAdapter(Context context, List<KindBean.DataBean> list,int mIndex,int mPagerSize) {
+
+    public TuijianAdapter(Context context, List<BannerBean.TuijianBean.ListBean> list) {
         this.list=list;
         this.context=context;
-        this.mIndex=mIndex;
-        this.mPagerSize=mPagerSize;
+
     }
 
     @Override
@@ -40,14 +39,14 @@ public class KindAdapter extends RecyclerView.Adapter<KindAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
-        position = position + mIndex*mPagerSize;
-holder.tv_rcb.setText(list.get(position).getName());
-        Glide.with(context).load(list.get(position).getIcon()).into(holder.iv_rcb);
+
+holder.tv_rcb.setText(list.get(position).getTitle());
+        Glide.with(context).load(list.get(position).getImages()).into(holder.iv_rcb);
     }
 
     @Override
     public int getItemCount() {
-        return list.size() > (mIndex + 1)*mPagerSize ? mPagerSize : (list.size() - mIndex*mPagerSize);
+        return list.size();
     }
 
     class MyViewHolder extends RecyclerView.ViewHolder{

@@ -12,14 +12,15 @@
             android:layout_height="match_parent"
             android:id="@+id/kind_name"
             ></ListView>
-        <android.support.v4.view.ViewPager
+        <FrameLayout
             android:layout_marginTop="?android:actionBarSize"
-            android:background="#ccc"
+            android:background="#ddd"
             android:layout_weight="1"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:id="@+id/vp_kind_child"
-            ></android.support.v4.view.ViewPager>
+            android:id="@+id/fl_child_kind"
+            ></FrameLayout>
+
 
 
 

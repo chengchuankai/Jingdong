@@ -1,5 +1,8 @@
 package zhanghegang.com.bawei.date0928jingdong.precenter;
 
+import android.text.TextUtils;
+
+import zhanghegang.com.bawei.date0928jingdong.MainActivity;
 import zhanghegang.com.bawei.date0928jingdong.model.ChildKindModel;
 import zhanghegang.com.bawei.date0928jingdong.view.ChildKindView;
 
@@ -17,16 +20,20 @@ public class ChildPresenter implements ChildKindModel.ChildListener {
         childKindModel.setChild(this);
     }
     public void gainChildKind(String cid){
-        childKindModel.gainChildKind(cid);
+        if(!TextUtils.isEmpty(cid)) {
+            childKindModel.gainChildKind(cid);
+        }
     }
 
     @Override
     public void gainSuc(String data) {
-
+        if(!TextUtils.isEmpty(data)) {
+            childview.gainSuc(data);
+        }
     }
 
     @Override
     public void gainFail() {
-
+childview.gainFail();
     }
 }
