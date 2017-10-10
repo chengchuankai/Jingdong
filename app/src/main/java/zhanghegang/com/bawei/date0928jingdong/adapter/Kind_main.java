@@ -58,6 +58,7 @@ public class Kind_main extends BaseAdapter {
         }
         if(i==position)
         {
+            //改变选中背景
            holder.tv_kind_name.setSelected(true);
             holder.tv_kind_name.setTextColor(Color.RED);
         }

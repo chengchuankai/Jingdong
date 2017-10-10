@@ -10,11 +10,11 @@
     android:id="@+id/tv_child_name_kind"
     android:text="子分类"
     />
-    <GridView
-        android:numColumns="3"
+    <android.support.v7.widget.RecyclerView
+
 
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:id="@+id/gv_child_kind"
-        ></GridView>
+        ></android.support.v7.widget.RecyclerView>
 </LinearLayout>

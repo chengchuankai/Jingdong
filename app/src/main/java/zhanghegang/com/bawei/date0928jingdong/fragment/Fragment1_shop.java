@@ -6,6 +6,7 @@ import android.support.v4.app.Fragment;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.ListView;
 
 import com.google.gson.Gson;
@@ -44,6 +45,9 @@ public class Fragment1_shop extends Fragment implements ChildKindView {
     public void onActivityCreated(@Nullable Bundle savedInstanceState) {
         super.onActivityCreated(savedInstanceState);
         //获得子分类
+       View view=View.inflate(getActivity(),R.layout.child_head_img,null);
+
+        lv_grid_childview.addHeaderView(view);
 
     }
 
@@ -70,7 +74,7 @@ public class Fragment1_shop extends Fragment implements ChildKindView {
 
     @Override
     public void gainSuc(final String data) {
-        if (data!=null) {
+        if (data!=null&&getActivity()!=null) {
 
             ((MainActivity)getActivity()).runOnUiThread(new Runnable() {
                 @Override

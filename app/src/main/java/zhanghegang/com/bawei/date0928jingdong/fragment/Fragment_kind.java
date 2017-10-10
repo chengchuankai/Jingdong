@@ -81,12 +81,14 @@ public class Fragment_kind extends Fragment implements BannerView {
 
     @Override
     public void kindSuc(final String data) {
-getActivity().runOnUiThread(new Runnable() {
-    @Override
-    public void run() {
-parseData(data);
-    }
-});
+        if(getActivity()!=null) {
+            getActivity().runOnUiThread(new Runnable() {
+                @Override
+                public void run() {
+                    parseData(data);
+                }
+            });
+        }
     }
 
     @Override
@@ -116,6 +118,7 @@ parseData(data);
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
                Fragment1_shop shop=new Fragment1_shop();
+                //发送下标
               kind_main.changePosition(i);
                 int cid = kind.get(i).getCid();
 

@@ -4,7 +4,6 @@ import android.content.Context;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 
@@ -13,19 +12,19 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import zhanghegang.com.bawei.date0928jingdong.R;
-import zhanghegang.com.bawei.date0928jingdong.bean.BannerBean;
+import zhanghegang.com.bawei.date0928jingdong.bean.ChildKindBean;
 import zhanghegang.com.bawei.date0928jingdong.bean.KindBean;
 
 /**
  * Created by asus on 2017/9/29.
  */
 
-public class TuijianAdapter extends RecyclerView.Adapter<TuijianAdapter.MyViewHolder> {
+public class Child_gv_kindAdapter extends RecyclerView.Adapter<Child_gv_kindAdapter.MyViewHolder> {
     private final Context context;
-    private final List<BannerBean.TuijianBean.ListBean> list;
+    private final List<ChildKindBean.DataBean.ListBean> list;
 
 
-    public TuijianAdapter(Context context, List<BannerBean.TuijianBean.ListBean> list) {
+    public Child_gv_kindAdapter(Context context, List<ChildKindBean.DataBean.ListBean> list) {
         this.list=list;
         this.context=context;
 
@@ -33,7 +32,7 @@ public class TuijianAdapter extends RecyclerView.Adapter<TuijianAdapter.MyViewHo
 
     @Override
     public MyViewHolder onCreateViewHolder(ViewGroup parent, int viewType) {
-       View view=View.inflate(context, R.layout.tuijian_rcv_item,null);
+       View view=View.inflate(context, R.layout.kind_child_child_item,null);
         MyViewHolder myViewHolder=new MyViewHolder(view);
         return myViewHolder;
     }
@@ -41,12 +40,8 @@ public class TuijianAdapter extends RecyclerView.Adapter<TuijianAdapter.MyViewHo
     @Override
     public void onBindViewHolder(MyViewHolder holder, int position) {
 
-holder.tv_title_rcb.setText(list.get(position).getTitle());
-        holder.tv_rcv_price.setText("¥"+list.get(position).getPrice());
-        String images = list.get(position).getImages();
-        String[] split = images.split("\\|");
-
-        Glide.with(context).load(split[0]).into(holder.iv_rcb);
+holder.tv_rcb.setText(list.get(position).getName());
+        Glide.with(context).load(list.get(position).getIcon()).into(holder.iv_rcb);
     }
 
     @Override
@@ -57,17 +52,13 @@ holder.tv_title_rcb.setText(list.get(position).getTitle());
     class MyViewHolder extends RecyclerView.ViewHolder{
 
         private final ImageView iv_rcb;
-        private final TextView tv_title_rcb;
-        private final TextView tv_rcv_price;
-        private final Button btn_like;
+        private final TextView tv_rcb;
 
         public MyViewHolder(View itemView) {
             super(itemView);
 
-            iv_rcb = itemView.findViewById(R.id.iv_tuijian_rcv);
-            tv_title_rcb = itemView.findViewById(R.id.tv_tuijian_title);
-            tv_rcv_price = itemView.findViewById(R.id.tv_tuijian_price);
-            btn_like = itemView.findViewById(R.id.btn_like);
+            iv_rcb = itemView.findViewById(R.id.iv_child_child);
+            tv_rcb = itemView.findViewById(R.id.tv_child_kind_childname);
         }
     }
 }

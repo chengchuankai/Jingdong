@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <android.support.v7.widget.Toolbar
+        android:fitsSystemWindows="true"
+
+        android:id="@+id/tool_head"
+        android:layout_height="?android:actionBarSize"
+        android:layout_width="match_parent"
+        >
+        <LinearLayout
+
+            android:id="@+id/ll_head"
+            android:layout_alignParentTop="true"
+            android:gravity="center_vertical"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <LinearLayout
+                android:padding="5dp"
+                android:id="@+id/ll_sao"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp">
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/a_s"
+                    />
+                <TextView
+                    android:paddingTop="3dp"
+                    android:textColor="@color/sao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="扫啊扫"
+                    android:textSize="@dimen/search_tv"
+                    />
+            </LinearLayout>
+            <LinearLayout
+                android:padding="5dp"
+                android:background="@drawable/search_bg"
+                android:layout_weight="1"
+                android:layout_width="0dp"
+                android:gravity="center_vertical"
+                android:layout_height="30dp">
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/search_icon2"
+                    />
+                <TextView
+                    android:layout_weight="1"
+                    android:padding="2dp"
+                    android:textColor="@color/search_hint"
+                    android:layout_width="0dp"
+                    android:textSize="@dimen/search_tv"
+                    android:layout_height="wrap_content"
+                    android:text="都市丽人领劵满399减200"
+                    />
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/root"
+                    />
+            </LinearLayout>
+            <LinearLayout
+
+                android:id="@+id/ll_mm"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="40dp"
+                android:layout_height="50dp">
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/pack"
+                    />
+
+            </LinearLayout>
+
+
+            <LinearLayout
+                android:padding="5dp"
+                android:id="@+id/ll_msg"
+                android:gravity="center"
+                android:orientation="vertical"
+                android:layout_width="wrap_content"
+                android:layout_height="50dp">
+                <ImageView
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:src="@drawable/a9x"
+                    />
+                <TextView
+
+                    android:paddingTop="3dp"
+                    android:textColor="@color/sao"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="信息"
+                    android:textSize="@dimen/search_tv"
+                    />
+            </LinearLayout>
+
+
+        </LinearLayout>
+    </android.support.v7.widget.Toolbar>
+</LinearLayout>

@@ -13,4 +13,9 @@
     <color name="shape_ring_select">#f00</color>
     <color name="shape_ring_normal">#ccc</color>
     <color name="tuijian_tvbg">#f00</color>
+    <color name="miaoshao_tvbg">#f00</color>
+    <color name="tuijian_rcv_item_tvbg">#f00</color>
+    <color name="tuijian_btn_like_tv">#666</color>
+    <color name="miaosha_tv_time">#fff</color>
+    <color name="miaosha_tv_item_now">#f00</color>
 </resources>

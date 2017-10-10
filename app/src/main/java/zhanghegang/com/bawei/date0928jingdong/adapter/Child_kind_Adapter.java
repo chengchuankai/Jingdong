@@ -1,6 +1,8 @@
 package zhanghegang.com.bawei.date0928jingdong.adapter;
 
 import android.content.Context;
+import android.support.v7.widget.GridLayoutManager;
+import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.BaseAdapter;
@@ -58,11 +60,14 @@ public class Child_kind_Adapter extends BaseAdapter {
         ChildKindBean.DataBean dataBean = list.get(i);
         String name = dataBean.getName();
         vh.tv_kind_chidname.setText(name);
-        vh.gv_child.setAdapter(new Child_Kind_Gv_adapter(context,dataBean.getList()));
+        //子分类的recyclerView
+        Child_gv_kindAdapter child_gv_kindAdapter=new Child_gv_kindAdapter(context,dataBean.getList());
+        vh.gv_child.setLayoutManager(new GridLayoutManager(context,3));
+        vh.gv_child.setAdapter(child_gv_kindAdapter);
         return view;
     }
     class ViewHolder{
          TextView tv_kind_chidname;
-        GridView gv_child;
+        RecyclerView gv_child;
     }
 }
