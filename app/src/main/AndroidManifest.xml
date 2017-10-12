@@ -3,6 +3,13 @@
     package="zhanghegang.com.bawei.date0928jingdong">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.MOUNT_UNMOUNT_FILESYSTEMS" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.RECORD_AUDIO" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
 
     <application
         android:name=".MyApp"
@@ -13,7 +20,6 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-
             android:name=".MainActivity"
             android:theme="@style/ToolBarTheme">
             <intent-filter>
@@ -23,7 +29,13 @@
             </intent-filter>
         </activity>
         <activity android:name=".CustomScanActivity" />
-        <activity android:name=".activity.ShopDetailActivity"></activity>
+        <activity android:name=".activity.ShopDetailActivity" />
+        <activity
+            android:name=".activity.RegActivity"
+            android:theme="@style/ToolBarTheme" />
+        <activity android:name=".activity.UserSetActivity" />
+        <activity android:name=".activity.MyInfoActivity" />
+        <activity android:name=".activity.ShopActivity"></activity>
     </application>
 
 </manifest>

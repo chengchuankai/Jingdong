@@ -1,0 +1,197 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="zhanghegang.com.bawei.date0928jingdong.activity.MyInfoActivity">
+    <LinearLayout
+        android:gravity="center_vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+        <ImageView
+            android:id="@+id/iv_cha"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/cha"
+            />
+        <TextView
+            android:textSize="18sp"
+            android:textColor="@color/my_jindong"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:text="个人信息"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_my_head"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="头像"
+            />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/ll_myInfo_head"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_height="wrap_content">
+            <com.makeramen.roundedimageview.RoundedImageView
+                android:layout_width="70dp"
+                android:layout_height="70dp"
+                android:id="@+id/iv_myInfoSet"
+                android:src="@mipmap/ic_launcher_round"
+                />
+
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/rightjiantou"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_my_username"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="用户名"
+            />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/ll_myInfo_head2"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_height="wrap_content">
+           <TextView
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:id="@+id/tv_myInfo_username"
+               android:text="用户名"
+               />
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_my_nick"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="昵称"
+            />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/ll_myInfo_head3"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_myInfo_nick"
+                android:text="昵称"
+                />
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+android:src="@drawable/rightjiantou"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_my_sex"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="性别"
+            />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/ll_myInfo_head4"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_myInfo_sex"
+                android:text="性别"
+                />
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+android:src="@drawable/rightjiantou"
+            />
+
+    </LinearLayout>
+    <LinearLayout
+        android:id="@+id/ll_my_birth"
+        android:padding="10dp"
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="出生日期"
+            />
+        <LinearLayout
+            android:orientation="horizontal"
+            android:id="@+id/ll_myInfo_head5"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:gravity="right"
+            android:layout_height="wrap_content">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/tv_myInfo_birth"
+                android:text="出生日期"
+                />
+
+        </LinearLayout>
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+android:src="@drawable/rightjiantou"
+            />
+
+    </LinearLayout>
+
+</LinearLayout>

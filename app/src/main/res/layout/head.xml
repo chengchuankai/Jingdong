@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <android.support.v4.widget.NestedScrollView
+    <zhanghegang.com.bawei.date0928jingdong.auto_view.Auto_AlpaTitle
 
         android:id="@+id/nest_scroll"
         android:layout_width="match_parent"
@@ -97,6 +97,6 @@
          </LinearLayout>
 
         </LinearLayout>
-    </android.support.v4.widget.NestedScrollView>
+    </zhanghegang.com.bawei.date0928jingdong.auto_view.Auto_AlpaTitle>
     <include layout="@layout/all_toobar"></include>
 </RelativeLayout>

@@ -64,9 +64,6 @@ private LinearLayout ll_sao;
             Window window = getWindow();
             window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
 
-
-
-
         }
 //        if (Build.VERSION.SDK_INT >= 21) {
 //            View decorView = getWindow().getDecorView();
@@ -124,6 +121,7 @@ private LinearLayout ll_sao;
         int resourceId = context.getResources().getIdentifier("status_bar_height", "dimen",
                 "android");
         if (resourceId > 0) {
+
             result = context.getResources().getDimensionPixelSize(resourceId);
         }
         return result;
@@ -158,7 +156,9 @@ private LinearLayout ll_sao;
     public void onViewClicked(View view) {
         switch (view.getId()) {
             case R.id.iv_head:
-                getSupportFragmentManager().beginTransaction().replace(R.id.fl_all, new Fragment_head()).commit();
+                Fragment_head fragment_head = new Fragment_head();
+                getSupportFragmentManager().beginTransaction().replace(R.id.fl_all,fragment_head ).commit();
+
                 ivHead.setImageResource(R.drawable.ac1);
                 ivKind.setImageResource(R.drawable.abw);
                 ivFind.setImageResource(R.drawable.aby);
@@ -166,6 +166,7 @@ private LinearLayout ll_sao;
                 ivMy.setImageResource(R.drawable.ac2);
                 break;
             case R.id.iv_kind:
+
                 getSupportFragmentManager().beginTransaction().replace(R.id.fl_all, new Fragment_kind()).commit();
                 ivHead.setImageResource(R.drawable.ac0);
                 ivKind.setImageResource(R.drawable.abx);

@@ -18,4 +18,6 @@
     <color name="tuijian_btn_like_tv">#666</color>
     <color name="miaosha_tv_time">#fff</color>
     <color name="miaosha_tv_item_now">#f00</color>
+    <color name="my_tv_reg">#fff</color>
+    <color name="my_jindong">#000</color>
 </resources>

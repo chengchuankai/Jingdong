@@ -1,0 +1,164 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:padding="15dp"
+    android:fitsSystemWindows="true"
+    android:orientation="vertical"
+    android:layout_height="match_parent"
+    tools:context="zhanghegang.com.bawei.date0928jingdong.activity.RegActivity">
+    <LinearLayout
+        android:gravity="center_vertical"
+
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        >
+    <ImageView
+        android:id="@+id/iv_cha"
+        android:layout_width="20dp"
+        android:layout_height="20dp"
+        android:src="@drawable/cha"
+        />
+    <TextView
+        android:textSize="18sp"
+        android:textColor="@color/my_jindong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        android:text="京东登录"
+        />
+    
+</LinearLayout>
+    <LinearLayout
+        android:layout_marginTop="30dp"
+        android:paddingTop="10dp"
+       android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+
+            android:textSize="@dimen/my_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="账号"
+            />
+        <EditText
+            android:hint="用户名/邮箱/手机号"
+            style="?android:attr/textViewStyle"
+            android:background="@null"
+            android:layout_marginLeft="10dp"
+            android:inputType="number"
+            android:id="@+id/et_user"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        ></View>
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:gravity="center_vertical"
+        android:paddingTop="10dp"
+        android:paddingBottom="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+
+            android:textSize="@dimen/my_user"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="密码"
+            />
+        <EditText
+            android:hint="请输入密码"
+            style="?android:attr/textViewStyle"
+            android:background="@null"
+            android:layout_marginLeft="10dp"
+            android:inputType="number"
+            android:id="@+id/et_pass"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="wrap_content" />
+        <ImageView
+            android:layout_marginRight="10dp"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/yannormal"
+            />
+    </LinearLayout>
+    <View android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="#ccc"
+        ></View>
+    <Button
+        android:layout_marginTop="20dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="登录"
+        android:textColor="#666"
+        android:id="@+id/btn_reg"
+        />
+    <LinearLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <TextView
+        android:id="@+id/tv_my_add"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="手机快速注册"
+        />
+        <TextView
+            android:gravity="right"
+        android:id="@+id/tv_my_forget_pass"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:text="忘记密码"
+        />
+
+    </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+<LinearLayout
+    android:layout_marginBottom="10dp"
+    android:layout_above="@+id/my_bottom"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_weixin"
+        android:src="@drawable/weixin" />
+    <ImageView
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:id="@+id/iv_qq"
+        android:src="@drawable/mqq" />
+
+</LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/my_bottom"
+            android:layout_alignParentBottom="true"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+<TextView
+    android:gravity="center"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="登录代表您已同意京东隐私政策"
+    />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+
+</LinearLayout>

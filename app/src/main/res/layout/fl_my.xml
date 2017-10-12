@@ -2,5 +2,43 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical" android:layout_width="match_parent"
     android:layout_height="match_parent">
+<RelativeLayout
+    android:id="@+id/rl_reg"
+    android:background="@drawable/normal_regbg"
 
+    android:layout_width="match_parent"
+    android:layout_height="120dp">
+    <LinearLayout
+        android:id="@+id/ll_my_reg"
+        android:gravity="center_vertical"
+        android:layout_centerVertical="true"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <com.makeramen.roundedimageview.RoundedImageView
+           android:id="@+id/my_user"
+            android:layout_width="60dp"
+            android:layout_height="60dp"
+            android:src="@drawable/user"
+            />
+        <TextView
+            android:id="@+id/tv_nickname"
+            android:textSize="@dimen/my_reg_name"
+            android:textColor="@color/my_tv_reg"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="登录/注册"
+            android:padding="5dp"
+            />
+        <ImageView
+            android:layout_width="15dp"
+            android:layout_height="15dp"
+            android:src="@drawable/rightjiantou"
+            />
+
+
+    </LinearLayout>
+
+
+
+</RelativeLayout>
 </RelativeLayout>
