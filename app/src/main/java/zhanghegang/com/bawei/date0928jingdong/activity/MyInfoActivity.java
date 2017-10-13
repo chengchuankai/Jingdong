@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Bitmap;
 import android.net.Uri;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.Environment;
 import android.provider.MediaStore;
@@ -12,6 +13,8 @@ import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.text.TextUtils;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.EditText;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
@@ -80,6 +83,11 @@ public class MyInfoActivity extends AppCompatActivity implements UserView {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        if (Build.VERSION.SDK_INT>=Build.VERSION_CODES.KITKAT){
+            Window window = getWindow();
+            window.addFlags(WindowManager.LayoutParams.FLAG_TRANSLUCENT_STATUS);
+
+        }
         setContentView(R.layout.activity_my_info);
         ButterKnife.bind(this);
         initData();
@@ -202,7 +210,7 @@ setNickName();
                     Map<String,String> map=new HashMap<String, String>();
                     map.put("uid",uid);
                     map.put("nickname",et_nick.getText().toString());
-                userPresenter.setNickName(map);
+                    userPresenter.setNickName(map);
                 }
             }
         }).setNegativeButton("取消", new DialogInterface.OnClickListener() {

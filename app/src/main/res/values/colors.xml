@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+<color name="xbannertvbag">#fff</color>
+    <color name="xbannertipbg">#ccc</color>
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
@@ -20,4 +22,8 @@
     <color name="miaosha_tv_item_now">#f00</color>
     <color name="my_tv_reg">#fff</color>
     <color name="my_jindong">#000</color>
+    <color name="tv_shop_title">#000</color>
+    <color name="tv_shopcar">#fff</color>
+    <color name="tv_shop_subtitle">#f00</color>
+    <color name="tab_xia_bg">#000</color>
 </resources>

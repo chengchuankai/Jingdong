@@ -1,6 +1,7 @@
 package zhanghegang.com.bawei.date0928jingdong.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -13,6 +14,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import zhanghegang.com.bawei.date0928jingdong.R;
+import zhanghegang.com.bawei.date0928jingdong.activity.ShopActivity;
 import zhanghegang.com.bawei.date0928jingdong.bean.BannerBean;
 import zhanghegang.com.bawei.date0928jingdong.bean.KindBean;
 
@@ -39,7 +41,7 @@ public class TuijianAdapter extends RecyclerView.Adapter<TuijianAdapter.MyViewHo
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
 
 holder.tv_title_rcb.setText(list.get(position).getTitle());
         holder.tv_rcv_price.setText("¥"+list.get(position).getPrice());
@@ -47,6 +49,15 @@ holder.tv_title_rcb.setText(list.get(position).getTitle());
         String[] split = images.split("\\|");
 
         Glide.with(context).load(split[0]).into(holder.iv_rcb);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent=new Intent(context, ShopActivity.class);
+                intent.putExtra("pid",list.get(position).getPid()+"");
+
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

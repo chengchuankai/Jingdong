@@ -2,8 +2,10 @@
 <resources>
     <dimen name="search_tv">12sp</dimen>
     <dimen name="kind_name">15sp</dimen>
+    <dimen name="xbanner_tip">15sp</dimen>
     <dimen name="my_reg_name">16sp</dimen>
     <dimen name="rcv_tuijian_tv_like">12sp</dimen>
     <dimen name="miaosha_tv_time">10sp</dimen>
     <dimen name="my_user">18sp</dimen>
+    <dimen name="tv_shop_bottom">12sp</dimen>
 </resources>

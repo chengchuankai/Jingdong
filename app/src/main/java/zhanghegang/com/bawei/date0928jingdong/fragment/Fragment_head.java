@@ -141,7 +141,7 @@ public class Fragment_head extends Fragment implements BannerView, ViewPager.OnP
     public void onResume() {
         super.onResume();
 
-        View view2 = View.inflate(getActivity(), R.layout.all_toobar, null);
+
         ImageView iv_sao = view.findViewById(R.id.iv_sao);
         ImageView iv_msg = view.findViewById(R.id.iv_msg);
         TextView tv_sao = view.findViewById(R.id.tv_sao);
@@ -204,7 +204,7 @@ public class Fragment_head extends Fragment implements BannerView, ViewPager.OnP
         rcv_show.setAdapter(tuijianAdapter);
         String name = tuijian.getName();
         tv_tuijian.setText(name);
-
+//轮播图数据
         final List<BannerBean.DataBean> been = bannerBean.getData();
         for (int i = 0; i < been.size(); i++) {
             int type = been.get(i).getType();
@@ -267,7 +267,7 @@ public class Fragment_head extends Fragment implements BannerView, ViewPager.OnP
     };
 
     private void parseTime(int time) {
-        int second = time / 1000;
+
         SimpleDateFormat simple = new SimpleDateFormat("HH:mm:ss");
         simple.setTimeZone(TimeZone.getTimeZone("GMT+00:00"));
         String format = simple.format(time);
@@ -339,7 +339,7 @@ public class Fragment_head extends Fragment implements BannerView, ViewPager.OnP
             }
 
 
-            System.out.println("totalPage" + viewList.size());
+           //为viewpager发送recycleview集合
             vp_head_kind.setAdapter(new Vp_kind_head_Adapter(viewList));
             //设置监听
             vp_head_kind.addOnPageChangeListener(this);
@@ -349,6 +349,10 @@ public class Fragment_head extends Fragment implements BannerView, ViewPager.OnP
 
     }
 
+    /**
+     * 画点
+     * @param totalPage
+     */
     private void drawDot(int totalPage) {
         img_list = new ArrayList<>();
         for (int i = 0; i < totalPage; i++) {

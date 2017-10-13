@@ -33,9 +33,15 @@
         <activity
             android:name=".activity.RegActivity"
             android:theme="@style/ToolBarTheme" />
-        <activity android:name=".activity.UserSetActivity" />
-        <activity android:name=".activity.MyInfoActivity" />
-        <activity android:name=".activity.ShopActivity"></activity>
+        <activity android:name=".activity.UserSetActivity"
+            android:theme="@style/ToolBarTheme"
+            />
+        <activity android:name=".activity.MyInfoActivity"
+            android:theme="@style/ToolBarTheme"
+            />
+        <activity android:name=".activity.ShopActivity"
+            android:theme="@style/ToolBarTheme"
+            ></activity>
     </application>
 
 </manifest>
