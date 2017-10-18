@@ -1,5 +1,6 @@
 package zhanghegang.com.bawei.date0928jingdong.activity;
 
+import android.content.SharedPreferences;
 import android.os.Build;
 import android.os.Bundle;
 import android.support.design.widget.TabLayout;
@@ -8,6 +9,7 @@ import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 import android.support.v4.view.ViewPager;
 import android.support.v7.app.AppCompatActivity;
+import android.text.TextUtils;
 import android.view.View;
 import android.view.ViewGroup;
 import android.view.Window;
@@ -17,8 +19,13 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 import butterknife.BindView;
 import butterknife.ButterKnife;
@@ -27,8 +34,10 @@ import zhanghegang.com.bawei.date0928jingdong.R;
 import zhanghegang.com.bawei.date0928jingdong.fragment.Fragment_detail;
 import zhanghegang.com.bawei.date0928jingdong.fragment.Fragment_say;
 import zhanghegang.com.bawei.date0928jingdong.fragment.Fragment_shopdetail;
+import zhanghegang.com.bawei.date0928jingdong.precenter.AddCarPresenter;
+import zhanghegang.com.bawei.date0928jingdong.view.AddCarView;
 
-public class ShopActivity extends AppCompatActivity {
+public class ShopActivity extends AppCompatActivity implements AddCarView {
 
     @BindView(R.id.tab_shop)
     TabLayout tabShop;
@@ -54,6 +63,9 @@ public class ShopActivity extends AppCompatActivity {
     ImageView ivGuanzhu;
     private List<Fragment> list_fragment;
     private List<String> list_shoptitle;
+    private AddCarPresenter addCarPresenter;
+    private Fragment_shopdetail fragment_shop;
+    private String pid;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -76,12 +88,14 @@ public class ShopActivity extends AppCompatActivity {
         list_shoptitle.add("商品");
         list_shoptitle.add("详情");
         list_shoptitle.add("评价");
-        String pid = getIntent().getStringExtra("pid");
+        pid = getIntent().getStringExtra("pid");
+        System.out.println("pid========"+ pid);
         //存储fragment
         list_fragment = new ArrayList<>();
+        //存储fragment
         Bundle bundle = new Bundle();
         bundle.putString("shopid", pid);
-        Fragment_shopdetail fragment_shop = new Fragment_shopdetail();
+        fragment_shop = new Fragment_shopdetail();
         fragment_shop.setArguments(bundle);
         list_fragment.add(fragment_shop);
         Fragment_detail fragment_detail = new Fragment_detail();
@@ -95,6 +109,7 @@ public class ShopActivity extends AppCompatActivity {
         vpTabShop.setAdapter(new ShopvpAdapter(getSupportFragmentManager()));
         Toast.makeText(this, pid, Toast.LENGTH_SHORT).show();
         tabShop.setupWithViewPager(vpTabShop);
+        addCarPresenter = new AddCarPresenter(this,this);
 
     }
 
@@ -111,13 +126,51 @@ public class ShopActivity extends AppCompatActivity {
             case R.id.ll_shopcar:
                 break;
             case R.id.tv_addshop:
+                addShop();
                 break;
+        }
+    }
+
+    private void addShop() {
+        SharedPreferences userAll = getSharedPreferences("userAll", MODE_PRIVATE);
+        String uid = userAll.getString("uid", null);
+        if(!TextUtils.isEmpty(uid))
+        {
+            Map<String,Object> map=new HashMap<>();
+            String s = fragment_shop.gainSellerid();
+            System.out.println("sellerId==22222222====="+s);
+            if(!TextUtils.isEmpty(s))
+            {
+                map.put("uid",uid);
+                map.put("pid",pid);
+                map.put("sellerid",s);
+                System.out.println("sellerId==3333====="+s);
+                addCarPresenter.addCar(map);
+
+            }
+
         }
     }
 
     @OnClick(R.id.iv_back_shop)
     public void onViewClicked() {
         finish();
+    }
+
+    @Override
+    public void onAddCarFail(String msg) {
+        Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+    }
+
+    @Override
+    public void onAddCarSuc(String data) {
+        try {
+            JSONObject jsonObject=new JSONObject(data);
+            String msg = jsonObject.getString("msg");
+            Toast.makeText(this, msg, Toast.LENGTH_SHORT).show();
+        } catch (JSONException e) {
+            e.printStackTrace();
+        }
     }
 
     private class ShopvpAdapter extends FragmentPagerAdapter {

@@ -101,7 +101,7 @@ public class Fragment_kind extends Fragment implements BannerView {
         Gson gson=new Gson();
         KindBean kindBean = gson.fromJson(data, KindBean.class);
         final List<KindBean.DataBean> kind = kindBean.getData();
-        System.out.println("king111++++++++"+kind.size());
+
 
         Iterator<KindBean.DataBean> iterator = kind.iterator();
         while (iterator.hasNext())

@@ -371,13 +371,14 @@ public class Fragment_head extends Fragment implements BannerView, ViewPager.OnP
 
     @Override
     public void kindFail() {
-
-        getActivity().runOnUiThread(new Runnable() {
-            @Override
-            public void run() {
-                Toast.makeText(getActivity(), "分类请求失败", Toast.LENGTH_SHORT).show();
-            }
-        });
+if(getActivity()!=null) {
+    getActivity().runOnUiThread(new Runnable() {
+        @Override
+        public void run() {
+            Toast.makeText(getActivity(), "分类请求失败", Toast.LENGTH_SHORT).show();
+        }
+    });
+}
     }
 
     @Override

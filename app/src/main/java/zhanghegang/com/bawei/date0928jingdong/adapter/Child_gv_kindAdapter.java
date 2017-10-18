@@ -1,6 +1,7 @@
 package zhanghegang.com.bawei.date0928jingdong.adapter;
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.v7.widget.RecyclerView;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import com.bumptech.glide.Glide;
 import java.util.List;
 
 import zhanghegang.com.bawei.date0928jingdong.R;
+import zhanghegang.com.bawei.date0928jingdong.activity.ChildShopActivity;
 import zhanghegang.com.bawei.date0928jingdong.bean.ChildKindBean;
 import zhanghegang.com.bawei.date0928jingdong.bean.KindBean;
 
@@ -38,10 +40,19 @@ public class Child_gv_kindAdapter extends RecyclerView.Adapter<Child_gv_kindAdap
     }
 
     @Override
-    public void onBindViewHolder(MyViewHolder holder, int position) {
+    public void onBindViewHolder(MyViewHolder holder, final int position) {
 
 holder.tv_rcb.setText(list.get(position).getName());
         Glide.with(context).load(list.get(position).getIcon()).into(holder.iv_rcb);
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent=new Intent(context, ChildShopActivity.class);
+                intent.putExtra("cid",list.get(position).getPscid()+"");
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override

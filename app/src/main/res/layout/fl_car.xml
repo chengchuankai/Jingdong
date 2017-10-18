@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<RelativeLayout
+
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <LinearLayout
+        android:padding="10dp"
+        android:layout_centerHorizontal="true"
+        android:layout_gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:textColor="#000"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" 
+            android:text="购物车"
+            android:textSize="20sp"
+            />
+        <ImageView
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/order_002"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:padding="5dp"
+        android:layout_alignParentRight="true"
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
+        <TextView
+            android:padding="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="编辑"
+            android:id="@+id/tv_etCar"
+            />
+        <ImageView
+
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:id="@+id/iv_car_msg"
+            android:src="@drawable/msg_hei"
+            />
+
+    </LinearLayout>
+</RelativeLayout>
+<android.support.v4.widget.SwipeRefreshLayout
+    android:layout_width="match_parent"
+    android:layout_height="0dp"
+    android:layout_weight="1"
+    >
+    <LinearLayout
+        android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcv_car"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+       ></android.support.v7.widget.RecyclerView>
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="match_parent"
+            android:layout_height="500dp"
+            android:src="@mipmap/ic_launcher_round" />
+    </LinearLayout>
+</android.support.v4.widget.SwipeRefreshLayout>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+        <LinearLayout
+            android:gravity="center_vertical"
+        android:layout_width="70dp"
+        android:layout_height="match_parent">
+        <CheckBox
+
+            android:layout_width="wrap_content"
+            android:layout_height="20dp"
+            android:id="@+id/car_all_select"
+            />
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="全选"
+            />
+
+    </LinearLayout>
+        <LinearLayout
+            android:gravity="center_vertical"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent">
+            <TextView
+                android:textColor="#000"
+                android:textSize="18sp"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="合计："
+                />
+            <TextView
+                android:gravity="bottom"
+                android:textColor="#000"
+                android:id="@+id/tv_sum_price"
+                android:layout_width="wrap_content"
+                android:layout_height="20dp"
+                android:text="¥ 0.00"
+                />
+
+        </LinearLayout>
+       <LinearLayout
+         android:background="#f00"
+           android:padding="0dp"
+           android:id="@+id/ll_go_pay"
+           android:gravity="center"
+           android:layout_width="100dp"
+           android:layout_height="match_parent"
+           >
+           <TextView
+               android:id="@+id/tv_go_pay"
+               android:textColor="#fff"
+               android:textSize="20sp"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="去结算"
+               />
+           <TextView
+               android:textColor="#fff"
+               android:id="@+id/tv_shopNum"
+               android:layout_width="wrap_content"
+               android:layout_height="wrap_content"
+               android:text="(0)"
+               />
+
+       </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

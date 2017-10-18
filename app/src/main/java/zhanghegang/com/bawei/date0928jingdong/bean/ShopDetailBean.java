@@ -136,7 +136,7 @@ public class ShopDetailBean {
         private String detailUrl;
         private String images;
         private int pid;
-        private int price;
+        private String price;
         private int pscid;
         private int salenum;
         private int sellerid;
@@ -183,11 +183,11 @@ public class ShopDetailBean {
             this.pid = pid;
         }
 
-        public int getPrice() {
+        public String getPrice() {
             return price;
         }
 
-        public void setPrice(int price) {
+        public void setPrice(String price) {
             this.price = price;
         }
 

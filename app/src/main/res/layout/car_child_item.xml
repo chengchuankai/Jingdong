@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:id="@+id/ll_car_child_title"
+    android:padding="5dp"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+    <ImageView
+        android:layout_width="30dp"
+        android:layout_height="20dp"
+        android:src="@drawable/full_delete"
+        />
+    <TextView
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent"
+        android:text="购满199元，可减80元"
+        />
+    <LinearLayout
+        android:gravity="right"
+        android:layout_weight="1"
+        android:layout_width="0dp"
+        android:layout_height="match_parent">
+        <TextView
+            android:gravity="center_vertical"
+            android:textColor="@color/shape_ring_select"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:text="去凑单"
+            />
+        <ImageView
+            android:src="@drawable/rightjiantou"
+            android:layout_width="20dp"
+            android:layout_height="20dp" />
+    </LinearLayout>
+
+</LinearLayout>
+
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+        <CheckBox
+            android:layout_marginLeft="10dp"
+            android:button="@drawable/checkbox_style"
+
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/cb_car_child"
+
+            />
+        <ImageView
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:src="@mipmap/ic_launcher_round"
+            android:id="@+id/iv_car_child"
+            />
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:ellipsize="end"
+                android:textSize="16sp"
+                android:maxLines="2"
+                android:text="标题"
+                android:id="@+id/tv_car_child_title"
+                />
+            <LinearLayout
+                android:gravity="bottom"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+                <TextView
+                    android:textSize="18sp"
+                    android:textColor="@color/shape_ring_select"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="¥ 0.00"
+                    />
+                <LinearLayout
+                    android:gravity="right"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+                    <zhanghegang.com.bawei.date0928jingdong.auto_view.AdPonitView
+                        android:layout_width="100dp"
+                        app:btnTextSize="14sp"
+                        android:id="@+id/car_point"
+                        app:btnWidth="25dp"
+                        app:tvWidth="50dp"
+                        android:layout_height="40dp">
+
+                    </zhanghegang.com.bawei.date0928jingdong.auto_view.AdPonitView>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>

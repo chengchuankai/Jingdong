@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical" android:layout_width="match_parent"
+    android:padding="10dp"
+    android:layout_height="match_parent">
+<ImageView
+    android:src="@mipmap/ic_launcher_round"
+    android:layout_width="match_parent"
+    android:layout_height="100dp"
+    android:id="@+id/iv_liner"
+    />
+    <TextView
+        android:padding="5dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/tv_liner_title"
+        android:text="标题"
+        /><TextView
+    android:textSize="17sp"
+    android:textColor="@color/shape_ring_select"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:id="@+id/tv_liner_price"
+    android:text="价格"
+    />
+</LinearLayout>

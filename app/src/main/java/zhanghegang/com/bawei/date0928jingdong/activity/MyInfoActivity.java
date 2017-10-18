@@ -252,6 +252,10 @@ setNickName();
         builder.show();
     }
 
+    /**
+     * 控件加载图片
+     * @param data
+     */
     public void setImageToView(Intent data){
         Bundle extras = data.getExtras();
         if(extras!=null)
@@ -270,6 +274,10 @@ setNickName();
         }
     }
 
+    /**
+     * 传输byte赋值给文件
+     * @param bytes
+     */
     private void addFile(byte[] bytes) {
         FileOutputStream out=null;
         try {

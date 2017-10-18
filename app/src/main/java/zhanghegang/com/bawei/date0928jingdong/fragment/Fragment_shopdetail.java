@@ -47,7 +47,7 @@ public class Fragment_shopdetail extends Fragment implements ShopDetailView {
     private View view;
     private ShopDetailPresenter shopDetailPresenter;
     private SharedPreferences shopdetail;
-
+private String sellerId="";
     @Nullable
     @Override
     public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
@@ -82,7 +82,10 @@ public class Fragment_shopdetail extends Fragment implements ShopDetailView {
                 break;
         }
     }
-
+public String gainSellerid(){
+    System.out.println("sellerId======="+sellerId);
+    return sellerId;
+}
     @Override
     public void gainSuc(String data) {
         final List<String> imgs_list=new ArrayList<>();
@@ -90,7 +93,8 @@ public class Fragment_shopdetail extends Fragment implements ShopDetailView {
         ShopDetailBean shopDetailBean = gson.fromJson(data, ShopDetailBean.class);
         if(shopDetailBean!=null) {
             ShopDetailBean.DataBean shopMsg = shopDetailBean.getData();
-
+            int sellerid = shopMsg.getSellerid();
+            sellerId=sellerid+"";
             //存入sp
             shopdetail.edit().putString("detail",shopMsg.getDetailUrl()).commit();
             String images = shopMsg.getImages();

@@ -8,4 +8,5 @@
     <dimen name="miaosha_tv_time">10sp</dimen>
     <dimen name="my_user">18sp</dimen>
     <dimen name="tv_shop_bottom">12sp</dimen>
+    <dimen name="kind_shaixuan">16sp</dimen>
 </resources>

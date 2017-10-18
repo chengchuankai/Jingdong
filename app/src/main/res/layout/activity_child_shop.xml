@@ -1,0 +1,191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:fitsSystemWindows="true"
+    tools:context="zhanghegang.com.bawei.date0928jingdong.activity.ChildShopActivity">
+    <LinearLayout
+        android:id="@+id/ll_kind_scro"
+android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+    <LinearLayout
+android:orientation="vertical"
+        android:fitsSystemWindows="true"
+        android:id="@+id/ll_nest_toolBar"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+      >
+
+
+        <android.support.v7.widget.Toolbar
+            android:fitsSystemWindows="true"
+
+            android:id="@+id/tool_head"
+            android:layout_height="?android:actionBarSize"
+            android:layout_width="match_parent"
+            >
+            <LinearLayout
+
+                android:id="@+id/ll_head"
+                android:layout_alignParentTop="true"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="50dp">
+                <LinearLayout
+                    android:padding="5dp"
+                    android:id="@+id/ll_sao"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:id="@+id/iv_kind_back"
+                        android:layout_width="30dp"
+                        android:layout_height="30dp"
+                        android:src="@drawable/leftjiantou"
+                        />
+
+                </LinearLayout>
+                <LinearLayout
+                    android:id="@+id/ll_search"
+                    android:padding="5dp"
+                    android:background="@drawable/search_bg_select"
+                    android:layout_weight="1"
+                    android:layout_width="0dp"
+                    android:gravity="center_vertical"
+                    android:layout_height="30dp">
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/search_icon2"
+                        />
+                    <TextView
+                        android:layout_weight="1"
+                        android:padding="2dp"
+                        android:textColor="@color/search_tv"
+                        android:layout_width="0dp"
+                        android:textSize="@dimen/search_tv"
+                        android:layout_height="wrap_content"
+                        android:text="都市丽人领劵满399减200"
+                        />
+                    <ImageView
+
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/root"
+                        />
+                </LinearLayout>
+
+
+                <LinearLayout
+                    android:padding="5dp"
+                    android:id="@+id/ll_msg"
+                    android:gravity="center"
+                    android:orientation="vertical"
+                    android:layout_width="wrap_content"
+                    android:layout_height="50dp">
+                    <ImageView
+                        android:id="@+id/iv_kind_type"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:src="@drawable/kind_grid"
+                        />
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.Toolbar>
+        <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#ccc"></View>
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+            <android.support.design.widget.TabLayout
+                android:layout_weight="3"
+                android:layout_width="0dp"
+                app:tabGravity="fill"
+                app:tabMode="fixed"
+                android:id="@+id/tab_child_kind"
+                app:tabTextColor="@color/tab_kind_normal"
+                app:tabIndicatorHeight="0dp"
+                app:tabSelectedTextColor="@color/tab_kind_select"
+                android:layout_height="50dp"></android.support.design.widget.TabLayout>
+            <LinearLayout
+                android:id="@+id/ll_shaixuan"
+                android:layout_weight="1"
+                android:gravity="center"
+                android:layout_width="0dp"
+                android:layout_height="match_parent">
+                <TextView
+                    android:drawableRight="@drawable/shaixuan"
+                    android:textColor="@color/tab_kind_select"
+                    android:id="@+id/tv_shaixuan"
+                    android:textSize="@dimen/kind_shaixuan"
+                    android:text="筛选"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+
+            </LinearLayout>
+
+        </LinearLayout>
+    </LinearLayout>
+
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#ccc"></View>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+<Button
+  android:layout_margin="10dp"
+    android:id="@+id/btn_jingdong"
+    android:padding="5dp"
+    android:text="京东配送"
+    android:layout_weight="1"
+    android:layout_width="0dp"
+    android:layout_height="match_parent" />
+        <Button
+            android:layout_margin="10dp"
+            android:id="@+id/btn_new_shop"
+            android:padding="5dp"
+            android:text="新品"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <Button
+            android:layout_margin="10dp"
+            android:id="@+id/btn_grade"
+            android:drawableRight="@drawable/down"
+            android:text="品牌"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+        <Button
+            android:layout_margin="10dp"
+            android:id="@+id/btn_caizhi"
+
+            android:text="材质"
+            android:drawableRight="@drawable/down"
+            android:layout_weight="1"
+            android:layout_width="0dp"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+            <View android:layout_width="match_parent" android:layout_height="1dp" android:background="#ccc"></View>
+    <android.support.v7.widget.RecyclerView
+        android:id="@+id/rcv_kind"
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"></android.support.v7.widget.RecyclerView>
+
+        </LinearLayout>
+    </LinearLayout>
+</LinearLayout>
