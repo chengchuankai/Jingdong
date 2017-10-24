@@ -10,13 +10,11 @@ import android.text.TextUtils;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.RelativeLayout;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
-import com.bumptech.glide.GlideBuilder;
 import com.bumptech.glide.load.engine.DiskCacheStrategy;
 import com.google.gson.Gson;
 import com.makeramen.roundedimageview.RoundedImageView;
@@ -28,6 +26,7 @@ import butterknife.BindView;
 import butterknife.ButterKnife;
 import butterknife.OnClick;
 import zhanghegang.com.bawei.date0928jingdong.R;
+import zhanghegang.com.bawei.date0928jingdong.activity.MyOrderActivity;
 import zhanghegang.com.bawei.date0928jingdong.activity.RegActivity;
 import zhanghegang.com.bawei.date0928jingdong.activity.UserSetActivity;
 import zhanghegang.com.bawei.date0928jingdong.bean.UserBean;
@@ -49,6 +48,8 @@ public class Fragment_my extends Fragment implements UserView {
     TextView tvNickname;
     @BindView(R.id.rl_reg)
     RelativeLayout rlReg;
+    @BindView(R.id.tv_myOrder)
+    TextView tvMyOrder;
     private View view;
     private SharedPreferences userAll;
     private UserPresenter up;
@@ -75,13 +76,12 @@ public class Fragment_my extends Fragment implements UserView {
 
         userAll = getActivity().getSharedPreferences("userAll", Context.MODE_PRIVATE);
         String uid = userAll.getString("uid", null);
-        System.out.println("uid========"+uid);
+        System.out.println("uid========" + uid);
         if (!TextUtils.isEmpty(uid)) {
             rlReg.setBackgroundResource(R.drawable.reg_bg);
             initData(uid);
 
-        }else
-        {
+        } else {
             rlReg.setBackgroundResource(R.drawable.normal_regbg);
             myUser.setImageResource(R.drawable.user);
         }
@@ -105,11 +105,9 @@ public class Fragment_my extends Fragment implements UserView {
     @OnClick(R.id.ll_my_reg)
     public void onViewClicked() {
         String uid = userAll.getString("uid", null);
-        if(TextUtils.isEmpty(uid)) {
+        if (TextUtils.isEmpty(uid)) {
             startActivityForResult(new Intent(getActivity(), RegActivity.class), REGRESULT);
-        }
-        else
-        {
+        } else {
             startActivity(new Intent(getActivity(), UserSetActivity.class));
         }
 
@@ -135,27 +133,28 @@ public class Fragment_my extends Fragment implements UserView {
     public void gainUserInfoFail() {
 
 
-
     }
 
     @Override
     public void gainUserSuc(String data) {
 
-        System.out.println("fragmentdata=====data===="+data);
+        System.out.println("fragmentdata=====data====" + data);
         Gson gson = new Gson();
         UserBean userBean = gson.fromJson(data, UserBean.class);
         UserBean.DataBean datas = userBean.getData();
         if (!TextUtils.isEmpty(datas.getIcon())) {
-            System.out.println("touxiang========="+datas.getIcon().toString());
+            System.out.println("touxiang=========" + datas.getIcon().toString());
             myUser.setOval(true);
-            Glide.with(getActivity().getApplicationContext())
-                    .load(datas.getIcon().toString())
-                    .diskCacheStrategy(DiskCacheStrategy.NONE)
-                    .skipMemoryCache(true)
-                    .error(R.mipmap.ic_launcher_round)
-                    .placeholder(R.mipmap.ic_launcher_round)
-                    .dontAnimate()
-                    .into(myUser);
+            if(getActivity()!=null) {
+                Glide.with(getActivity().getApplicationContext())
+                        .load(datas.getIcon().toString())
+                        .diskCacheStrategy(DiskCacheStrategy.NONE)
+                        .skipMemoryCache(true)
+                        .error(R.mipmap.ic_launcher_round)
+                        .placeholder(R.mipmap.ic_launcher_round)
+                        .dontAnimate()
+                        .into(myUser);
+            }
 
         }
         if (datas.getNickname() != null) {
@@ -185,5 +184,10 @@ public class Fragment_my extends Fragment implements UserView {
     @Override
     public void setNickSuc(String msg) {
 
+    }
+
+    @OnClick(R.id.tv_myOrder)
+    public void onOrderClicked() {
+startActivity(new Intent(getActivity(), MyOrderActivity.class));
     }
 }

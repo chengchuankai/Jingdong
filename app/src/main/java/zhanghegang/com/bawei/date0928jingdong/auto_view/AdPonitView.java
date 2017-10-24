@@ -30,7 +30,7 @@ public class AdPonitView extends LinearLayout implements TextWatcher, View.OnCli
     private int tvTextSize;
     private int btnTextSize;
     private OnAmountChangeListener mListener;
-    private int goods_storage=1;
+    private int goods_storage=10;
     private int amount = 1; //购买数量
     public AdPonitView(Context context) {
         this(context,null);

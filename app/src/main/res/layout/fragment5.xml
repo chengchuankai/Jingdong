@@ -1,0 +1,248 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+    <RelativeLayout
+        android:id="@+id/rl_login"
+        android:layout_width="match_parent"
+        android:layout_height="150dp">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:gravity="center"
+            android:layout_height="70dp"
+            android:id="@+id/linearLayout">
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_marginLeft="240dp"
+                android:layout_height="40dp"
+                android:src="@drawable/sz"/>
+            <ImageView
+                android:layout_width="40dp"
+                android:layout_marginLeft="20dp"
+                android:layout_height="40dp"
+                android:src="@drawable/xx"/>
+        </LinearLayout>
+        <LinearLayout
+            android:background="@drawable/b5a"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
+            android:layout_alignParentTop="true"
+            android:layout_alignParentLeft="true"
+            android:layout_alignParentStart="true">
+
+        </LinearLayout>
+    </RelativeLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="70dp">
+        <TextView
+            android:text="代付款"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableTop="@drawable/dfk"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="代收货"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableTop="@drawable/dsh"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="代评价"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:gravity="center"
+            android:drawableTop="@drawable/dpj"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="退换/售后"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableTop="@drawable/th_sh"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="我的订单"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableTop="@drawable/mydd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="#cfcfcf"
+        android:layout_height="1dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="40dp">
+        <TextView
+            android:text="0"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="0"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="0.00"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="0"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <ImageView
+            android:padding="10dp"
+            android:src="@drawable/myqb"
+            android:layout_weight="1"
+            android:layout_width="40dp"
+            android:layout_height="40dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="60dp"
+        android:weightSum="1">
+        <TextView
+            android:text="京豆"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.30" />
+        <TextView
+            android:text="优惠券"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.17" />
+
+        <TextView
+            android:id="@+id/textView"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.43"
+            android:gravity="center"
+            android:padding="10dp"
+            android:text="白条" />
+
+        <TextView
+            android:text="京东E卡"
+            android:padding="10dp"
+            android:gravity="center"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="我的钱包"
+            android:gravity="center"
+            android:padding="10dp"
+            android:src="@drawable/myqb"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="#cfcfcf"
+        android:layout_height="5dp"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="70dp">
+        <TextView
+            android:text="商品关注"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableTop="@drawable/spgz"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="店铺关注"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableTop="@drawable/dp"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="内容关注"
+            android:layout_weight="1"
+            android:padding="10dp"
+            android:gravity="center"
+            android:drawableTop="@drawable/gz"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+        <TextView
+            android:text="浏览记录"
+            android:padding="10dp"
+            android:layout_weight="1"
+            android:gravity="center"
+            android:drawableTop="@drawable/lljl"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent" />
+    </LinearLayout>
+    <View
+        android:layout_width="match_parent"
+        android:background="#cfcfcf"
+        android:layout_height="1dp"/>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:orientation="horizontal"
+        android:layout_height="70dp"
+        android:weightSum="1">
+        <TextView
+            android:text="我的活动"
+            android:padding="10dp"
+            android:gravity="center"
+            android:drawableTop="@drawable/hd"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.11" />
+        <TextView
+            android:text="社区"
+            android:padding="10dp"
+            android:gravity="center"
+            android:drawableTop="@drawable/shqz"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.27" />
+        <TextView
+            android:text="客户服务"
+            android:padding="10dp"
+            android:gravity="center"
+            android:drawableTop="@drawable/kh"
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:layout_weight="0.10" />
+
+    </LinearLayout>
+</LinearLayout>

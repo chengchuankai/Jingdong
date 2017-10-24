@@ -7,4 +7,7 @@ package zhanghegang.com.bawei.date0928jingdong.view;
 public interface SearchCarView {
     void onSearchCarFail(String msg);
     void onSearchCarSuc(String data);
+    void onUpdateCarFail(String msg);
+    void onUpdateCarSuc(String data);
+
 }

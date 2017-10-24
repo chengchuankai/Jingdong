@@ -2,7 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:orientation="vertical"
      android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="wrap_content">
     <LinearLayout
         android:background="@color/car_title"
         android:padding="10dp"
@@ -10,6 +10,8 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
         <CheckBox
+            android:button="@drawable/checkbox_style"
+
             android:layout_width="wrap_content"
             android:layout_height="20dp"
             android:padding="5dp"
@@ -22,17 +24,17 @@
             android:layout_height="20dp" />
         <TextView
            android:layout_marginLeft="5dp"
-            android:textSize="20sp"
+            android:textSize="15sp"
             android:id="@+id/tv_car_dianpuName"
             android:gravity="center_vertical"
             android:text="京东自营"
             android:layout_width="wrap_content"
             android:layout_height="match_parent" />
     </LinearLayout>
+
     <android.support.v7.widget.RecyclerView
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
         android:id="@+id/rcv_car_item"
-        ></android.support.v7.widget.RecyclerView>
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"></android.support.v7.widget.RecyclerView>
 
 </LinearLayout>

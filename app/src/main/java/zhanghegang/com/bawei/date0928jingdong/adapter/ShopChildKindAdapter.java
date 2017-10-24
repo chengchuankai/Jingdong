@@ -35,7 +35,7 @@ public class ShopChildKindAdapter extends RecyclerView.Adapter<RecyclerView.View
     }
     public void setMarket(boolean flag){
         this.flag=flag;
-notifyDataSetChanged();
+        System.out.println("kindflag=========="+flag);
     }
     public void addList(List<ShopChildKindBean.DataBean> list2){
         this.list.addAll(list2);

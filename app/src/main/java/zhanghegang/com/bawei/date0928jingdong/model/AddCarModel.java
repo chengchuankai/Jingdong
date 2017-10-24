@@ -16,6 +16,6 @@ import zhanghegang.com.bawei.date0928jingdong.utils.OkhttpUtils;
 
 public class AddCarModel {
     public void addCar(Context context, Map<String,Object> map, OkhttpCall okhttpCall){
-        OkhttpUtils.getInstance(context).call(OkhttpMethod.POST, ApiUrl.SEARCHURL,map,okhttpCall);
+        OkhttpUtils.getInstance(context).call(OkhttpMethod.POST, ApiUrl.ADDCARURL,map,okhttpCall);
     }
 }

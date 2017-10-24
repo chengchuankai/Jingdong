@@ -17,6 +17,10 @@ public class ApiUrl {
     public static final String KINDURL="http://120.27.23.105/product/getCatagory";
     public static final String ChildKindUrl="http://120.27.23.105/product/getProductCatagory";
     public static final String ADDCARURL="http://120.27.23.105/product/addCart";
-    public static final String SEARCHURL="http://120.27.23.105/product/getCarts";
-
+    public static final String SEARCHCARURL="http://120.27.23.105/product/getCarts";
+    public static final String UPDATECARURL="http://120.27.23.105/product/updateCarts";
+    public static final String DELETECAR="http://120.27.23.105/product/deleteCart";
+    public static final String CREATEORDER="http://120.27.23.105/product/createOrder";
+    public static final String UPDATEORDER="http://120.27.23.105/product/updateOrder";
+public static final String GETORDER="http://120.27.23.105/product/getOrders";
 }

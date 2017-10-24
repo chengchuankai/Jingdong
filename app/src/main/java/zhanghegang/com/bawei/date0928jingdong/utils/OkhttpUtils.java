@@ -47,13 +47,21 @@ public class OkhttpUtils {
     }
     public void call(OkhttpMethod okhttpMethod, String url, Map<String,Object> map, final OkhttpCall okhttpCall){
         //创建构造者模式
-        OkHttpClient.Builder okHttpClient=new OkHttpClient.Builder();
-        okHttpClient.connectTimeout(4, TimeUnit.SECONDS);
-        okHttpClient.readTimeout(4,TimeUnit.SECONDS);
-        okHttpClient.writeTimeout(4,TimeUnit.SECONDS);
+//        OkHttpClient.Builder okHttpClient=new OkHttpClient.Builder();
+//        okHttpClient.connectTimeout(4, TimeUnit.SECONDS);
+//        okHttpClient.readTimeout(4,TimeUnit.SECONDS);
+//        okHttpClient.writeTimeout(4,TimeUnit.SECONDS);
         Request request=null;
-        OkHttpClient client = okHttpClient.build();
+//        OkHttpClient client = okHttpClient.build();
+        OkHttpClient client =
+                new OkHttpClient.Builder()
+                        .addInterceptor(new LogInterceptor())
 
+                        .connectTimeout(10, TimeUnit.SECONDS)
+                        .readTimeout(10, TimeUnit.SECONDS)
+                        .writeTimeout(10, TimeUnit.SECONDS)
+                        .retryOnConnectionFailure(false)
+                        .build();
        if(map!=null&&map.entrySet().size()>0) {
 
                if (okhttpMethod == OkhttpMethod.GET) {

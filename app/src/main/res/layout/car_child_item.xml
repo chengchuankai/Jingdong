@@ -2,6 +2,7 @@
 <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:orientation="vertical"
+    android:padding="10dp"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 <LinearLayout
@@ -78,6 +79,7 @@
                 android:layout_height="match_parent">
                 <TextView
                     android:textSize="18sp"
+                    android:id="@+id/tv_car_price"
                     android:textColor="@color/shape_ring_select"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
@@ -93,7 +95,7 @@
                         android:id="@+id/car_point"
                         app:btnWidth="25dp"
                         app:tvWidth="50dp"
-                        android:layout_height="40dp">
+                        android:layout_height="30dp">
 
                     </zhanghegang.com.bawei.date0928jingdong.auto_view.AdPonitView>
                 </LinearLayout>

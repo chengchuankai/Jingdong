@@ -146,6 +146,7 @@ public class Fragment_head extends Fragment implements BannerView, ViewPager.OnP
         ImageView iv_msg = view.findViewById(R.id.iv_msg);
         TextView tv_sao = view.findViewById(R.id.tv_sao);
         TextView tv_msg = view.findViewById(R.id.tv_msg);
+        ll_dot.removeAllViews();
         nest_scroll.setTitleAndHead(ll_nest_toolBar, iv_banner, iv_sao, iv_msg, tv_msg, tv_sao);
         initData();
     }
@@ -181,6 +182,10 @@ public class Fragment_head extends Fragment implements BannerView, ViewPager.OnP
         list_img = new ArrayList<>();
         Gson gson = new Gson();
         BannerBean bannerBean = gson.fromJson(data, BannerBean.class);
+        if(bannerBean==null)
+        {
+            return;
+        }
         //获得秒杀数据
         BannerBean.MiaoshaBean miaosha = bannerBean.getMiaosha();
 
@@ -200,7 +205,12 @@ public class Fragment_head extends Fragment implements BannerView, ViewPager.OnP
         List<BannerBean.TuijianBean.ListBean> list = tuijian.getList();
         //设置recyclerview适配器
         TuijianAdapter tuijianAdapter = new TuijianAdapter(getActivity(), list);
-        rcv_show.setLayoutManager(new GridLayoutManager(getActivity(), 2));
+        rcv_show.setLayoutManager(new GridLayoutManager(getActivity(), 2){
+            @Override
+            public boolean canScrollVertically() {
+                return false;
+            }
+        });
         rcv_show.setAdapter(tuijianAdapter);
         String name = tuijian.getName();
         tv_tuijian.setText(name);
@@ -312,40 +322,41 @@ public class Fragment_head extends Fragment implements BannerView, ViewPager.OnP
     private void pareseKindData(String data) {
         Gson gson = new Gson();
         KindBean kindBean = gson.fromJson(data, KindBean.class);
-        List<KindBean.DataBean> kind = kindBean.getData();
-        System.out.println("king111++++++++" + kind.size());
+        if(kindBean!=null) {
+            List<KindBean.DataBean> kind = kindBean.getData();
+            System.out.println("king111++++++++" + kind.size());
 
-        Iterator<KindBean.DataBean> iterator = kind.iterator();
-        while (iterator.hasNext()) {
-            KindBean.DataBean next = iterator.next();
-            if (next.getIshome().equals("0")) {
-                iterator.remove();
+            Iterator<KindBean.DataBean> iterator = kind.iterator();
+            while (iterator.hasNext()) {
+                KindBean.DataBean next = iterator.next();
+                if (next.getIshome().equals("0")) {
+                    iterator.remove();
+                }
+            }
+            if (getActivity() != null) {
+                LayoutInflater inflater = LayoutInflater.from(getActivity());
+
+                //向上取整
+                int totalPage = (int) Math.ceil(kind.size() * 1.0 / maxPage);
+                System.out.println("totalPage" + totalPage);
+                List<View> viewList = new ArrayList<>();
+                for (int i = 0; i < totalPage; i++) {
+                    RecyclerView rcv = (RecyclerView) inflater.inflate(R.layout.head_rcv_kind, vp_head_kind, false);
+
+                    rcv.setLayoutManager(new GridLayoutManager(getActivity(), 5));
+                    KindAdapter kindAdapter = new KindAdapter(getActivity(), kind, i, maxPage);
+                    rcv.setAdapter(kindAdapter);
+                    viewList.add(rcv);
+                }
+
+
+                //为viewpager发送recycleview集合
+                vp_head_kind.setAdapter(new Vp_kind_head_Adapter(viewList));
+                //设置监听
+                vp_head_kind.addOnPageChangeListener(this);
+
             }
         }
-        if (getActivity() != null) {
-            LayoutInflater inflater = LayoutInflater.from(getActivity());
-
-            //向上取整
-            int totalPage = (int) Math.ceil(kind.size() * 1.0 / maxPage);
-            System.out.println("totalPage" + totalPage);
-            List<View> viewList = new ArrayList<>();
-            for (int i = 0; i < totalPage; i++) {
-                RecyclerView rcv = (RecyclerView) inflater.inflate(R.layout.head_rcv_kind, vp_head_kind, false);
-
-                rcv.setLayoutManager(new GridLayoutManager(getActivity(), 5));
-                KindAdapter kindAdapter = new KindAdapter(getActivity(), kind, i, maxPage);
-                rcv.setAdapter(kindAdapter);
-                viewList.add(rcv);
-            }
-
-
-           //为viewpager发送recycleview集合
-            vp_head_kind.setAdapter(new Vp_kind_head_Adapter(viewList));
-            //设置监听
-            vp_head_kind.addOnPageChangeListener(this);
-
-        }
-
 
     }
 

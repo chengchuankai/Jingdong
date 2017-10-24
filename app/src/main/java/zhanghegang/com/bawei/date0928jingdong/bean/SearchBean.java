@@ -94,7 +94,7 @@ public class SearchBean {
 
              */
 
-            private int bargainPrice;
+            private String bargainPrice;
             private String createtime;
             private String detailUrl;
             private String images;
@@ -107,11 +107,11 @@ public class SearchBean {
             private String subhead;
             private String title;
 
-            public int getBargainPrice() {
+            public String getBargainPrice() {
                 return bargainPrice;
             }
 
-            public void setBargainPrice(int bargainPrice) {
+            public void setBargainPrice(String bargainPrice) {
                 this.bargainPrice = bargainPrice;
             }
 

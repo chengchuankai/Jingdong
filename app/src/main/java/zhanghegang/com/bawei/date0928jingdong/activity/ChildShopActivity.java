@@ -179,11 +179,31 @@ private boolean adapterFlag;
 
                 if (tab.getPosition() == 1) {
                     orderFlag = false;
-                    initData();
+                    if (shop_shop!=null&&shop_shop.size() > 0) {
+                        if (orderFlag == false) {
+                            Collections.sort(shop_shop, new SaleOrder(numFlag));
+                            if (numFlag == false) {
+                                numFlag = true;
+                            } else {
+                                numFlag = false;
+                            }
+                        }
+                        rcvKind.setAdapter(shopChildKindAdapter);
+//                        shopChildKindAdapter.notifyDataSetChanged();
+                    }
 
                 } else if (tab.getPosition() == 2) {
                     orderFlag = true;
-                    initData();
+                    if (shop_shop!=null&&shop_shop.size() > 0) {
+                        Collections.sort(shop_shop, new Order(priceFlag));
+                        if (priceFlag == false) {
+                            priceFlag = true;
+                        } else {
+                            priceFlag = false;
+                        }
+                        rcvKind.setAdapter(shopChildKindAdapter);
+//                        shopChildKindAdapter.notifyDataSetChanged();
+                    }
 
                 }
 
@@ -198,11 +218,34 @@ private boolean adapterFlag;
             public void onTabReselected(TabLayout.Tab tab) {
                 if (tab.getPosition() == 1) {
                     orderFlag = false;
-                    initData();
+                    if (shop_shop!=null&&shop_shop.size() > 0) {
+                        if (orderFlag == false) {
+                            Collections.sort(shop_shop, new SaleOrder(numFlag));
+                            if (numFlag == false) {
+                                numFlag = true;
+                            } else {
+                                numFlag = false;
+                            }
+                        }
+                        rcvKind.setAdapter(shopChildKindAdapter);
+//                        shopChildKindAdapter.notifyDataSetChanged();
+                    }
+//                    initData();
 
                 } else if (tab.getPosition() == 2) {
                     orderFlag = true;
-                    initData();
+                    if (shop_shop!=null&&shop_shop.size() > 0) {
+                        Collections.sort(shop_shop, new Order(priceFlag));
+                        if (priceFlag == false) {
+                            priceFlag = true;
+                        } else {
+                            priceFlag = false;
+                        }
+                        rcvKind.setAdapter(shopChildKindAdapter);
+//                        shopChildKindAdapter.notifyDataSetChanged();
+                    }
+//                    initData();
+
 
                 }
             }
@@ -219,6 +262,11 @@ private boolean adapterFlag;
 //                Toast.makeText(this, cid, Toast.LENGTH_SHORT).show();
                 Map<String, Object> map = new HashMap<>();
                 map.put("pscid", cid);
+                if(orderFlag)
+                {
+                    map.put("sort",1);
+
+                }
                 if(pager!=-1) {
                     map.put("page", pager + "");
                 }
@@ -238,6 +286,11 @@ private boolean adapterFlag;
 //                Toast.makeText(this, key, Toast.LENGTH_SHORT).show();
                 Map<String, Object> map = new HashMap<>();
                 map.put("keywords", key);
+                if(orderFlag)
+                {
+                    map.put("sort",1);
+
+                }
                 if(pager!=-1) {
                     System.out.println("pager=111111=========="+pager);
                     map.put("page", pager + "");
@@ -275,18 +328,23 @@ private boolean adapterFlag;
     @OnClick(R.id.iv_kind_type)
     public void onViewClicked() {
         if (flag == false) {
-            ivKindType.setImageResource(R.drawable.kind_liner);
             flag = true;
+            ivKindType.setImageResource(R.drawable.kind_liner);
+            shopChildKindAdapter.setMarket(flag);
+            rcvKind.setLayoutManager(new GridLayoutManager(this, 2));
+            rcvKind.setAdapter(shopChildKindAdapter);
 
-                shopChildKindAdapter.setMarket(flag);
-             initData();
+
+
 
         } else {
-            ivKindType.setImageResource(R.drawable.kind_grid);
             flag = false;
+            rcvKind.setLayoutManager(new LinearLayoutManager(this));
+            ivKindType.setImageResource(R.drawable.kind_grid);
 
-                shopChildKindAdapter.setMarket(flag);
-            initData();
+            shopChildKindAdapter.setMarket(flag);
+          rcvKind.setAdapter(shopChildKindAdapter);
+
         }
     }
 
@@ -302,21 +360,21 @@ private boolean adapterFlag;
         if (shopChildKindBean != null) {
             shop_shop = shopChildKindBean.getData();
             if (shop_shop.size() > 0) {
-                if (orderFlag == false) {
-                    Collections.sort(shop_shop, new SaleOrder(numFlag));
-                    if (numFlag == false) {
-                        numFlag = true;
-                    } else {
-                        numFlag = false;
-                    }
-                } else {
-                    Collections.sort(shop_shop, new Order(priceFlag));
-                    if (priceFlag == false) {
-                        priceFlag = true;
-                    } else {
-                        priceFlag = false;
-                    }
-                }
+//                if (orderFlag == false) {
+//                    Collections.sort(shop_shop, new SaleOrder(numFlag));
+//                    if (numFlag == false) {
+//                        numFlag = true;
+//                    } else {
+//                        numFlag = false;
+//                    }
+//                } else {
+//                    Collections.sort(shop_shop, new Order(priceFlag));
+//                    if (priceFlag == false) {
+//                        priceFlag = true;
+//                    } else {
+//                        priceFlag = false;
+//                    }
+//                }
 
 setAda(shop_shop);
 
@@ -330,7 +388,7 @@ setAda(shop_shop);
     }
 
     private void setAda( List<ShopChildKindBean.DataBean> shop_shop) {
-        if (flag == false) {
+        if (flag==false) {
             rcvKind.setLayoutManager(new LinearLayoutManager(this));
         } else {
             rcvKind.setLayoutManager(new GridLayoutManager(this, 2));
@@ -340,12 +398,14 @@ setAda(shop_shop);
             shopChildKindAdapter = new ShopChildKindAdapter(this, shop_shop, flag);
             rcvKind.setAdapter(shopChildKindAdapter);
         } else {
+
             if(pagerFlag) {
                 shopChildKindAdapter.addList(shop_shop);
-            }
+            }else{}
+            shopChildKindAdapter.notifyDataSetChanged();
 
 //                rcvKind.setAdapter(shopChildKindAdapter);
-            shopChildKindAdapter.notifyDataSetChanged();
+
 
         }
     }

@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+
+    android:layout_height="match_parent"
+    tools:context="zhanghegang.com.bawei.date0928jingdong.activity.PayActivity">
+    <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:orientation="vertical">
+
+        <ImageView
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:background="@drawable/msp_demo_title_bg"
+            android:scaleType="center"
+            android:src="@drawable/msp_demo_title"
+            tools:ignore="ContentDescription"/>
+
+        <fragment
+            android:id="@+id/fragment"
+            android:name="zhanghegang.com.bawei.date0928jingdong.fragment.ExternalFragment"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"/>
+
+        <Button
+            android:id="@+id/bt_wechat"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:text="微信支付"/>
+    </LinearLayout>
+</LinearLayout>

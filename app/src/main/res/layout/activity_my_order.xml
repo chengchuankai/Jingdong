@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:orientation="vertical"
+    android:fitsSystemWindows="true"
+    android:layout_height="match_parent"
+    tools:context="zhanghegang.com.bawei.date0928jingdong.activity.MyOrderActivity">
+<LinearLayout
+
+    android:padding="10dp"
+    android:orientation="horizontal"
+    android:id="@+id/ll_order"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content">
+<ImageView
+    android:id="@+id/iv_order_back"
+    android:layout_width="30dp"
+    android:layout_height="30dp"
+    android:src="@drawable/leftjiantou"
+    />
+    <LinearLayout
+
+        android:layout_weight="1"
+        android:gravity="center"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <TextView
+            android:textSize="18sp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="我的订单"
+            />
+        <ImageView
+            android:layout_width="10dp"
+            android:layout_height="10dp"
+            android:id="@+id/iv_order_down"
+android:src="@drawable/order_down"
+            />
+    </LinearLayout>
+    <LinearLayout
+        android:gravity="center_vertical"
+        android:layout_width="wrap_content"
+        android:layout_height="match_parent">
+        <ImageView
+           android:layout_marginRight="10dp"
+            android:id="@+id/iv_order_find"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/order_find"
+            />
+        <ImageView
+            android:id="@+id/iv_order_msg"
+            android:layout_width="20dp"
+            android:layout_height="20dp"
+            android:src="@drawable/order_msg"
+            />
+    </LinearLayout>
+</LinearLayout>
+    <android.support.design.widget.TabLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+android:id="@+id/tab_order"
+        app:tabSelectedTextColor="@color/shape_ring_select"
+        app:tabIndicatorColor="@color/shape_ring_select"
+        ></android.support.design.widget.TabLayout>
+    <android.support.v7.widget.RecyclerView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/rcv_order"
+        ></android.support.v7.widget.RecyclerView>
+</LinearLayout>

@@ -31,7 +31,7 @@ public class SearchPresenter {
                 ((Activity)context).runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
-searchCarView.onSearchCarFail(msg);
+searchCarView.onSearchCarFail("请求失败");
                     }
                 });
             }
@@ -41,7 +41,33 @@ searchCarView.onSearchCarFail(msg);
                 ((Activity)context).runOnUiThread(new Runnable() {
                     @Override
                     public void run() {
+                        System.out.println("ceshi======search======="+result);
 searchCarView.onSearchCarSuc(result);
+                    }
+                });
+            }
+        });
+
+    }
+    public void updateCar(Map<String,Object> map){
+        searchCarModel.updateCar(context, map, new OkhttpCall() {
+            @Override
+            public void onFailure(String e, final String msg) {
+                ((Activity)context).runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        searchCarView.onUpdateCarFail(msg);
+                    }
+                });
+            }
+
+            @Override
+            public void onResponse(final String result) {
+                ((Activity)context).runOnUiThread(new Runnable() {
+                    @Override
+                    public void run() {
+                        System.out.println("ceshi======update======="+result);
+                        searchCarView.onUpdateCarSuc(result);
                     }
                 });
             }
